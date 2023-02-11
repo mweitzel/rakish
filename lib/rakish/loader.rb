@@ -1,4 +1,6 @@
 require "zeitwerk"
+require "concurrent"
+
 module Rakish
   module Loader
     @@loader
@@ -12,6 +14,7 @@ module Rakish
 
       Bundler.require
       Initializer
+      Initializer.register(:lock, Concurrent::ReentrantReadWriteLock.new)
     end
 
     def prep(**kwargs)

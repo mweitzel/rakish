@@ -6,10 +6,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Matthew"]
   s.email       = "matthew@example.com"
   s.files       = Dir['rakish/**/*.rb']
-#  s.add_runtime_dependency 'zeitwerk'
   s.add_dependency "zeitwerk"
-
-  s.homepage    =
-    "https://rubygems.org/gems/hola"
-  s.license       = "MIT"
+  s.add_dependency "concurrent-ruby"
+  s.homepage    = "https://github.com/mweitzel/rakish"
+  s.license     = "MIT"
 end

@@ -8,3 +8,5 @@ gem "puma"
 gem "hanami-router", "~> 2.0.0.rc"
 # The best debugger in town
 gem "pry"
+# Modern concurrency tools for Ruby.
+gem 'concurrent-ruby', require: 'concurrent'

@@ -17,7 +17,6 @@ module Rakish
 
     def register(key, value)
       Global.instance._exec(key, value) do |key, value|
-        puts 'key: ' + key.to_s
         self.define_singleton_method(key) { value }
       end
     end

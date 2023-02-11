@@ -24,7 +24,6 @@ module Rakish
       def call(env)
         if env['reload_mutex'] == "acquired"
           reload
-          puts 'reloaded'
         end
         @app.call(env)
       end
