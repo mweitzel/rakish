@@ -12,7 +12,6 @@ module Rakish
       @loader.setup
 
       Bundler.require
-      Initializer.register(:lock, Concurrent::ReentrantReadWriteLock.new)
     end
 
     def reload
