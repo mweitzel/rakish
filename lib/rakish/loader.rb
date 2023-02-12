@@ -4,6 +4,7 @@ require "concurrent"
 module Rakish
   module Loader
     @@loader
+
     module_function
 
     def init(dir: 'lib')

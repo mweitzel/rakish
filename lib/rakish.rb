@@ -1,11 +1,9 @@
-
 require "zeitwerk"
 loader = Zeitwerk::Loader.for_gem
 loader.push_dir(__dir__)
 loader.setup
 
 module Rakish
-
   def self.run
     Loader.init
     run Global.instance.app
@@ -26,15 +24,6 @@ module Rakish
     )
   end
 end
-
-
-
-
-
-
-
-
-
 
 # require 'loader'
 # require "zeitwerk"

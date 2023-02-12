@@ -1,5 +1,4 @@
 module Rakish
-
   class Application
     def initialize(app, config)
       config = config.new if config.is_a?(Class)
@@ -16,6 +15,7 @@ module Rakish
 
     class ReloadShim
       attr_accessor :app
+
       def initialize(klass_proc)
         @klass_proc = klass_proc
         reload
