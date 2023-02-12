@@ -15,12 +15,6 @@ module Rakish
       Initializer.register(:lock, Concurrent::ReentrantReadWriteLock.new)
     end
 
-    def prep(**kwargs)
-      kwargs.each do |key, value|
-        Initializer.register(key, value)
-      end
-    end
-
     def reload
       @loader.reload
     end

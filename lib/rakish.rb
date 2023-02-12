@@ -10,7 +10,7 @@ module Rakish
   end
 
   def self.prep(app:, config:, **kwargs)
-    Loader.prep(app:, config:, **kwargs)
+    Initializer.prep(app:, config:, **kwargs)
   end
 
   def self.application

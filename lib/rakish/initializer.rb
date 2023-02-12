@@ -14,7 +14,12 @@ module Rakish
   module Initializer
     module_function
 
-    # use module space as a pseudo-main
+    def prep(**kwargs)
+      kwargs.each do |key, value|
+        register(key, value)
+      end
+    end
+
 
     def register(key, value)
       Global.instance._exec(key, value) do |kkey, vvalue|
@@ -22,7 +27,6 @@ module Rakish
       end
     end
 
-    # register(:app, ::Application.new)
     register(:logger, Logger.new($stdout))
 
     Global.instance.logger.info('initializers, ok!')
