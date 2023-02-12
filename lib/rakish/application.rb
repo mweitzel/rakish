@@ -1,5 +1,7 @@
 module Rakish
   class Application
+    attr_reader :config
+
     def initialize(app, config)
       config = config.new if config.is_a?(Class)
       @app = ReloadShim.new(app)

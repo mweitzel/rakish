@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.files       = Dir['rakish/**/*.rb']
   s.homepage    = 'https://github.com/mweitzel/rakish'
   s.license     = 'MIT'
+
   s.add_dependency 'concurrent-ruby'
   s.add_dependency 'zeitwerk'
 end

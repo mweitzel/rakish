@@ -3,33 +3,20 @@ loader = Zeitwerk::Loader.for_gem
 loader.push_dir(__dir__)
 loader.setup
 
+# Top level namespace for Gem.
 module Rakish
-  def self.run
-    Loader.init
-    run Global.instance.app
-  end
-
   def self.init(**kwargs)
     Loader.init(**kwargs)
   end
 
-  def self.prep(**kwargs)
-    Loader.prep(**kwargs)
+  def self.prep(app:, config:, **kwargs)
+    Loader.prep(app:, config:, **kwargs)
   end
 
-  def self.app
-    Application.new(
+  def self.application
+    @@application ||= Application.new(
       Global.instance.app,
       Global.instance.config
     )
   end
 end
-
-# require 'loader'
-# require "zeitwerk"
-# # require 'logger'
-# # require 'singleton'
-# # require 'initializer'
-
-# module Rakish
-# end
