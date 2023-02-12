@@ -3,7 +3,7 @@ module Rakish
     def middleware
       [
         SimpleLogger,
-        ReloadLock,
+        ReloadLock
       ]
     end
   end

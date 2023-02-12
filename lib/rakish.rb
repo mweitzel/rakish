@@ -1,4 +1,4 @@
-require "zeitwerk"
+require 'zeitwerk'
 loader = Zeitwerk::Loader.for_gem
 loader.push_dir(__dir__)
 loader.setup

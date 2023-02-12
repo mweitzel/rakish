@@ -1,10 +1,11 @@
 # zeitwerk loaded module to forward all calls to Global.instance
 module Rakish
   module Goose
-    extend self
+    module_function
+
     def method_missing(...)
       Global.instance.send(...)
-    rescue
+    rescue StandardError
       super(...)
     end
   end

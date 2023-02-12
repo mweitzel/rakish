@@ -9,7 +9,7 @@ module Rakish
 
     def call(env)
       if Rakish::Global.instance.lock.try_write_lock
-        env["reload_mutex"] = "acquired"
+        env['reload_mutex'] = 'acquired'
         Loader.reload
         Rakish::Global.instance.lock.release_write_lock
       end

@@ -1,5 +1,5 @@
-require "zeitwerk"
-require "concurrent"
+require 'zeitwerk'
+require 'concurrent'
 
 module Rakish
   module Loader
