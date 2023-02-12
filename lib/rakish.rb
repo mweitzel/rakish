@@ -14,7 +14,7 @@ module Rakish
   end
 
   def self.application
-    @@application ||= Application.new(
+    @application ||= Application.new(
       Global.instance.app,
       Global.instance.config
     )

@@ -9,7 +9,7 @@ module Rakish
       instance_exec(...)
     end
   end
-  Global.instance
+  G = Global.instance
 
   module Initializer
     module_function
@@ -17,8 +17,8 @@ module Rakish
     # use module space as a pseudo-main
 
     def register(key, value)
-      Global.instance._exec(key, value) do |key, value|
-        define_singleton_method(key) { value }
+      Global.instance._exec(key, value) do |kkey, vvalue|
+        define_singleton_method(kkey) { vvalue }
       end
     end
 

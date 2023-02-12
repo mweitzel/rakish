@@ -6,8 +6,8 @@ module Rakish
       config = config.new if config.is_a?(Class)
       @app = ReloadShim.new(app)
       @config = config
-      @app_with_mw = @config.middleware.reverse.reduce(@app) do |app, mw|
-        mw.new(app)
+      @app_with_mw = @config.middleware.reverse.reduce(@app) do |built_app, mw|
+        mw.new(built_app)
       end
     end
 

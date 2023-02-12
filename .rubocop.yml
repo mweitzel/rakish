@@ -3,7 +3,9 @@ AllCops:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
-Gemspec/RequireMFA:
+Gemspec/RequireMFA: # todo
   Enabled: false
-Gemspec/RequiredRubyVersion:
+Gemspec/RequiredRubyVersion: # todo
+  Enabled: false
+Style/Documentation: # todo
   Enabled: false
