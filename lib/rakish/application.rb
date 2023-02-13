@@ -19,7 +19,6 @@ module Rakish
       attr_accessor :app
 
       def initialize(klass_proc)
-        @klass_proc = klass_proc
         reload
       end
 
@@ -29,8 +28,7 @@ module Rakish
       end
 
       def reload
-        klass = @klass_proc.call
-        @app = klass.new
+        @app = Rakish.app
       end
     end
   end

@@ -7,33 +7,33 @@ loader.setup
 module Rakish
   def self.init(**kwargs)
     Loader.init(**kwargs)
-    G.register(:lock, Concurrent::ReentrantReadWriteLock.new)
+    Static.register(:lock, Concurrent::ReentrantReadWriteLock.new)
   end
 
   def self.prep(app:, config:, **kwargs)
-    G.register(:app, app)
-    G.register(:config, config)
+    Static.register(:app, app)
+    Static.register(:config, config)
     kwargs.each do |key, value|
-      G.register(key, value)
+      Static.register(key, value)
     end
   end
 
   def self.application
     @application ||= Application.new(
-      G.app,
-      G.config
+      Static.app,
+      Static.config
     )
   end
 
-  # namespace as pseudo main
-  G = Class.new do
-    def initialize
-      @kv = {}
-    end
+  def self.app
+    Static.app.call.new
+  end
 
-    def register(k, v)
-      @kv[k] = v
-      self.class.define_method(k) { @kv[k] }
-    end
-  end.new
+  def self.config
+    @config ||= Static.config.new
+  end
+
+  def self.static
+    Static
+  end
 end
