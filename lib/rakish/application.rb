@@ -28,6 +28,7 @@ module Rakish
       end
 
       def reload
+        return if ENV["DISABLE_RAKISH_RELOAD"] == "true"
         @app = Rakish.app
       end
     end

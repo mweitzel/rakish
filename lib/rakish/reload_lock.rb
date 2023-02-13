@@ -3,7 +3,6 @@ require 'net/http'
 module Rakish
   class ReloadLock
     def initialize(app)
-      # @wait_group = 0
       @app = app
     end
 
