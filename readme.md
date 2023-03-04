@@ -26,7 +26,7 @@ Conceptually it is fairly simple: your Application reloads, your Config does not
 in your gemfile
 
 ```ruby
-  gem 'rakish'
+  gem 'rakish', git: 'https://github.com/mweitzel/rakish'
 ```
 
 ```ruby
